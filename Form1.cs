@@ -8,61 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Practica0001
+namespace Grados
 {
     public partial class Form1 : Form
     {
-        int vResultado;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnconvertir1_Click(object sender, EventArgs e)
         {
+            float cent = float.Parse(this.textBox1.Text);
+            float fair = (cent * 9 / 5) + 32;
+            this.convertir.Text = fair.ToString();
 
-  
-        }
-        
-private void btnsuma_Click(object sender, EventArgs e)
-        {
-            vResultado = Convert.ToInt32(textnum1.Text) + Convert.ToInt32(textnum2.Text);
-            lblresult.Text = vResultado.ToString();
-            lblsigno.Text = "+";
+
         }
 
-        private void btnresta_Click(object sender, EventArgs e)
+        private void btnconvertir_Click(object sender, EventArgs e)
         {
-            vResultado = Convert.ToInt32(textnum1.Text) - Convert.ToInt32(textnum2.Text);
-            lblresult.Text = vResultado.ToString();
-            lblsigno.Text = "-";
+            float cent = float.Parse(this.textBox2.Text);
+            float fair = (cent -32) * 5/9;
+            this.convertir1.Text = fair.ToString();
+
         }
 
-        private void btnmulti_Click(object sender, EventArgs e)
+        private void CERRAR_Click(object sender, EventArgs e)
         {
-            vResultado = Convert.ToInt32(textnum1.Text) * Convert.ToInt32(textnum2.Text);
-            lblresult.Text = vResultado.ToString();
-            lblsigno.Text = "x";
+            this.Close();
         }
-
-        private void btndivision_Click(object sender, EventArgs e)
-        {
-            vResultado = Convert.ToInt32(textnum1.Text) / Convert.ToInt32(textnum2.Text);
-            lblresult.Text = vResultado.ToString();
-            lblsigno.Text = "/";
-        }
-
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-            textnum1.Text = "";
-            lblsigno.Text = "000";
-            lblresult.Text = "";
-            textnum2.Text = "";
-        }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();        }
     }
-        }
-    
+}
